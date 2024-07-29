@@ -1,5 +1,5 @@
 name: CI
- 
+
 on:
   push:
     branches: [ "main" ]
@@ -11,17 +11,17 @@ on:
         description: 'Input string for the workflow'
         required: true
         default: 'Hello, world!'
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
- 
+
     steps:
       - uses: actions/checkout@v4
- 
-      - name: Run a one-line script
-        run: echo ${{ github.event.inputs.inputString }}
- 
+
+      - name: Print input string
+        run: echo "Input string is: ${{ github.event.inputs.inputString }}"
+
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
